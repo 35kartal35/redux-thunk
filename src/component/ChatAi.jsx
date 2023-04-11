@@ -1,28 +1,48 @@
-import React from 'react'
-import axios from 'axios'
-import { useDispatch } from 'react-redux'
-import { ActionTypes } from '../costans/actionTypes'
-import { getDataStart } from '../action/chatAction'
+import React, { useState } from 'react'
+
+import { useDispatch, useSelector } from 'react-redux'
+
+import { getAnswer, getDataStart } from '../app/action/chatAction'
+
 
 const ChatAi = () => {
+    const state = useSelector((state) => state.chatState)
     const dispatch = useDispatch
+    const [prompt, setPrompt] = useState('')
+
     const handleSubmit = () => {
         dispatch(getDataStart());
-        axios.get('https://jsonplaceholder.typicode.com/todos/')
-            .then((res) =>
-                dispatch({ type: ActionTypes.GET_ANSWER, payload: res.data })
-            );
+        dispatch(getAnswer(prompt));
+        setPrompt('');
+
     };
+    const handleChange = (e) => {
+        setPrompt(e.target.value)
+    };
+    console.log(state)
     return (
         <div className='chat'>
-            <div className='list'> liste</div>
+            <div className='list'>
+                {state.chatData.map((message) => (
+                    <>
+                        <p>{message.prompt}</p>
+                        <p>{message.answer}</p>
+                    </>
+                ))}
+
+                {state.isLoading && "Mesaj Yükleniyor...."}
+            </div>
             <div className='form'>
-                <input type='text' placeholder='yapay zekadan birşey isteyin' />
+                <input
+                    value={prompt}
+                    onChange={handleChange}
+                    type='text'
+                    placeholder='yapay zekadan birşey isteyin' />
                 <button onClick={handleSubmit}>Gönder</button>
             </div>
-            Chat
-        </div>
-    )
-}
 
-export default ChatAi
+        </div>
+    );
+};
+
+export default ChatAi;

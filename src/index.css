@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: inherit;
   font-weight: 400;
@@ -19,7 +25,7 @@ button {
   font-weight: 500;
   background-color: #1a1a1a;
   color: rgba(255, 255, 255);
-  border: 1px solid;
+  border: 1px solid transparent;
   cursor: pointer;
   border: 1px solid transparent;
 }
@@ -34,7 +40,7 @@ button:hover {
   padding: 50px;
   height: 100vh;
   gap: 20px;
-  align-items: center;
+
 }
 
 .chat-bot h1 {
@@ -52,6 +58,14 @@ button:hover {
 
 .list {
   background-color: grey;
+  overflow: auto;
+  flex-grow: 1;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
 }
 
 code {
@@ -62,4 +76,38 @@ code {
 .form {
   display: flex;
   justify-content: center;
+}
+
+.prompt {
+  align-self: flex-start;
+  background-color: #747bff;
+  padding: 5px, 20px;
+  border-radius: 8px, 8px, 8px, 0;
+  font-size: 18px;
+
+}
+
+.answer {
+  background-color: #747bff;
+  padding: 5px 20px;
+  align-self: flex-end;
+  border-radius: 8px 8px 0 8px;
+  font-size: 18px;
+}
+
+.image-answer {
+  max-width: 400px;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.form input {
+  width: 70%;
+  height: 50px;
+  padding: 5px 20px;
+  border-radius: 10px 0 0 10px;
 }

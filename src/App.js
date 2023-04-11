@@ -2,11 +2,9 @@ import { useState } from "react";
 import ChatAi from "./component/ChatAi";
 import ImageAi from "./component/ImageAi";
 
-
-
-
 function App() {
   const [isChatMode, setIsChatMode] = useState(true);
+
   const handleClick = () => {
     setIsChatMode(!isChatMode);
   };
@@ -20,8 +18,7 @@ function App() {
 
       </button>
       {isChatMode ? <ChatAi /> : <ImageAi />}
-      <input className="chat" />
-      <button>Gönder</button>
+
     </div>
   );
 }
