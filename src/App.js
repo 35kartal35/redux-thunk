@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ChatAi from "./component/ChatAi";
-import ImageAi from "./component/ImageAi";
+import ImageAi from "./component/imageAi";
+
 
 function App() {
   const [isChatMode, setIsChatMode] = useState(true);
@@ -11,10 +12,10 @@ function App() {
   return (
     <div className="chat-bot">
       <h1>
-        Hayal Et
+        YAPAY ZEKA
       </h1>
       <button onClick={handleClick}>
-        {isChatMode ? "resim moduna geç" : "chat Moduna geç"}
+        {isChatMode ? "RESİM MODU" : "CHAT GPT"}
 
       </button>
       {isChatMode ? <ChatAi /> : <ImageAi />}

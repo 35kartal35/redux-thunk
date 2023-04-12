@@ -21,7 +21,7 @@ h1 {
 button {
   border-radius: 4px;
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   background-color: #1a1a1a;
   color: rgba(255, 255, 255);
@@ -68,10 +68,7 @@ button:hover {
 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
 
 .form {
   display: flex;
@@ -83,7 +80,7 @@ code {
   background-color: #747bff;
   padding: 5px, 20px;
   border-radius: 8px, 8px, 8px, 0;
-  font-size: 18px;
+  font-size: 25px;
 
 }
 
@@ -92,7 +89,7 @@ code {
   padding: 5px 20px;
   align-self: flex-end;
   border-radius: 8px 8px 0 8px;
-  font-size: 18px;
+  font-size: 25px;
 }
 
 .image-answer {
@@ -100,10 +97,7 @@ code {
   padding: 20px;
 }
 
-.form {
-  display: flex;
-  justify-content: center;
-}
+
 
 .form input {
   width: 70%;
